@@ -49,24 +49,7 @@ vue-seed-spa
     │  │
     │  └─styles            //样式
     ├─components           //组件目录
-    │  ├─pages             //页面组件目录
-    │  │  │  Cascader.vue
-    │  │  │  Checkbox.vue
-    │  │  │  HelloWorld.vue
-    │  │  │  Input.vue
-    │  │  │  Radio.vue
-    │  │  │  Select.vue
-    │  │  │  Slider.vue
-    │  │  │  Table.vue
-    │  │  │  
-    │  │  └─router
-    │  │          FlyProfile.vue
-    │  │          ThirdProfile.vue
-    │  │          VueProfile.vue
-    │  │          VueRouter.vue
-    │  │
-    │  └─ui                //公共UI组件目录
-    │          Timer.vue
+    │            
     │
     ├─config              //全局配置目录
     │  │  index.js        //项目整体配置文件
@@ -92,7 +75,10 @@ vue-seed-spa
     │          app.js
     │
     └─utils               //工具类
-            index.js
+    │      index.js
+    │
+    └─views             	//页面
+ 
 </pre>
 
 ## Build Setup
