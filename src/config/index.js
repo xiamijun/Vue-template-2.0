@@ -2,12 +2,15 @@
 
 // axios 默认配置
 export const AXIOS_DEFAULT_CONFIG = {
+  // 超时时间
   timeout: 20000,
   maxContentLength: 20000,
   headers: {
+    // 默认Content-Type
     // 'Content-Type': 'application/x-www-form-urlencoded'
     'Content-Type': 'application/json' // 跨域的时候会产生 options预检
   },
+  // 接口前缀
   // baseURL: 'http://localhost:8080/xiaozhi-back-api' //可以换种写法
   //baseURL: process.env.NODE_ENV !== 'production' ? '/xiaozhi-back-api' : 'http://172.16.130.164:8080/xiaozhi-back-api'
   baseURL: '/xiaozhi-back-api'
@@ -31,7 +34,7 @@ export const ROUTER_DEFAULT_CONFIG = {
 
 // API 默认配置
 export const API_DEFAULT_CONFIG = {
-  mockBaseURL: 'http://yapi.demo.qunar.com/mock/12982/flytest/v1', // mock地址
+  mockBaseURL: 'http://yapi.demo.qunar.com', // mock地址
   mock: false, // 是否开启mock
   debug: false, // 是否开启debug模式
   sep: '/' // 接口调用分隔符

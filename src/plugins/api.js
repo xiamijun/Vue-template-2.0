@@ -3,7 +3,6 @@
 import axios from './axios';
 import _assign from 'lodash/assign';
 import _merge from 'lodash/merge';
-// import _isEmpty from 'lodash/isEmpty';
 
 import { assert } from '@/utils';
 import { API_DEFAULT_CONFIG, AXIOS_DEFAULT_CONFIG } from '@/config';

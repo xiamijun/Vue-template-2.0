@@ -29,10 +29,11 @@ module.exports = {
   disableHMR: process.env.NODE_ENV === 'production' ? true : false,
   // 开发配置
   dev: {
+    // 打包输出目录
     assetsRoot: path.resolve(__dirname, '../dist'),
-    // 静态资源文件夹
+    // 打包输出目录下的二级目录
     assetsSubDirectory: 'assets',
-    // 发布路径
+    // 发布路径，hash模式下使用'./'，history模式下使用'/'
     assetsPublicPath: '/',
     // Various Dev Server settings
     host: 'localhost',

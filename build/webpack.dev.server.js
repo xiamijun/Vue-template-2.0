@@ -10,7 +10,7 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const history = require('connect-history-api-fallback');
 const proxy = require('./proxy');
-const proxyurl = 'http://server.host:8081';
+const proxyurl = 'http://server.host:8081'; // 接口代理到`server.host`的`8081`端口。可通过`switchHosts`工具配置后端的`ip`地址为`server.host`，实现不同后端地址的快速切换。
 
 const PORT = config.dev.port,
     HOST = config.dev.host,
@@ -40,7 +40,7 @@ app.use('/views', express.static(path.join(config.dev.assetsRoot, 'views')));
 app.use('/assets', express.static(path.join(config.dev.assetsRoot, 'assets')));
 
 // 代理真实的URL地址
-app.use('/xiaozhi-back-api/*', proxy(proxyurl));
+app.use('/xiaozhi-back-api/*', proxy(proxyurl)); // 代理所有接口前缀为`xiaozhi-back-api`的真实的URL地址。
 
 app.use(router);
 
