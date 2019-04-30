@@ -30,17 +30,11 @@ let devWebpackConfig = merge(baseWebpackConfig, {
       filename: utils.assetsPath('styles/[name].[contenthash].css'),
       allChunks: false
     }),
-    // new CopyWebpackPlugin([
-    //   {
-    //     from: path.resolve(__dirname, '../', 'mock'),
-    //     to: path.resolve(__dirname, '../dist/', 'mock')
-    //   },
-    //   {
-    //     from: path.resolve(__dirname, '../src/', 'assets'),
-    //     to: path.resolve(__dirname, '../dist/', 'assets'),
-    //     ignore: ['.*']
-    //   }
-    // ]),
+    new CopyWebpackPlugin([{
+      from: path.resolve(__dirname, '../static'),
+      to: config.dev.assetsSubDirectory,
+      ignore: ['.*']
+    }]),
     new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' })
   ]
 });
