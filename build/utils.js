@@ -164,13 +164,15 @@ const createSPAHTMLPlugin = () => {
     ? [
         new HtmlWebpackPlugin({
           filename: generateViewDirectory(),
-          template: 'html-withimg-loader!' + config.htmlTemplate()
+          template: 'html-withimg-loader!' + config.htmlTemplate(),
+          favicon: path.resolve('favicon.ico')
         })
       ]
     : [
         new HtmlWebpackPlugin({
           filename: generateViewDirectory(),
           template: 'html-withimg-loader!' + config.htmlTemplate(),
+          favicon: path.resolve('favicon.ico'),
           minify: {
             removeComments: true,
             collapseWhitespace: true,
