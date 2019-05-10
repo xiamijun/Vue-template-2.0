@@ -14,7 +14,7 @@ const env =
   process.env.NODE_ENV === 'testing'
     ? require('../config/test.env')
     : require('../config/prod.env');
-
+const Version = new Date().getTime();
 let webpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({
@@ -26,8 +26,8 @@ let webpackConfig = merge(baseWebpackConfig, {
   devtool: config.build.productionSourceMap ? config.build.devtool : false,
   output: {
     path: config.build.assetsRoot,
-    filename: utils.assetsPath('js/[name].[chunkhash].js'),
-    chunkFilename: utils.assetsPath('js/[name].[chunkhash].js')
+    filename: utils.assetsPath(`js/[name].[chunkhash].${Version}.js`),
+    chunkFilename: utils.assetsPath(`js/[name].[chunkhash].${Version}.js`)
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -41,7 +41,7 @@ let webpackConfig = merge(baseWebpackConfig, {
       parallel: true
     }),
     new ExtractTextPlugin({
-      filename: utils.assetsPath('styles/[name].[contenthash].css'),
+      filename: utils.assetsPath(`styles/[name].[contenthash].${Version}.css`),
       allChunks: false
     }),
     new OptimizeCSSPlugin({
